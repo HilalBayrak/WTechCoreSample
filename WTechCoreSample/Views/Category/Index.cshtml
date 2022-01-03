@@ -1,0 +1,12 @@
+﻿
+
+@model List<WTechCoreSample.Models.Category>
+
+
+<h1>Count: @Model.Count</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.CategoryName</li>
+    }
+</ul>

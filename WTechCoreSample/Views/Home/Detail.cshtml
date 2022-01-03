@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model WTechCoreSample.Models.VM.BlogDetailVM
+
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>@Model.Title</h1>
+                    <span class="subheading">@Model.AddDate.ToString("dd MMMM yyyy dddd")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+         
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            @Model.Title
+                        </h2>
+                        <h3 class="post-subtitle"> @Html.Raw(Model.Content)</h3>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="#!">Start Bootstrap</a>
+                        on @Model.AddDate.ToString("dd MMMM yyyy dddd")
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            
+
+
+
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+        </div>
+    </div>
+    <ul>
+        @foreach (var item in Model.Comments)
+        {
+            <li>@item.Title / @item.Content</li>
+        }
+    </ul>
+
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        <h3>Yorum Yap</h3>
+        <form action="/Comment/AddComment" method="post">
+
+            <input type="hidden" name="BlogPostId" value="@Model.Id"/>
+
+            <div class="form-group">
+                <label>Başlık</label>
+                <input type="text" name="Title" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>İçerik</label>
+                <textarea name="Content" class="form-control"></textarea>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="Gönder"/>
+             </div>
+        </form>
+     
+    </div>
+</div>

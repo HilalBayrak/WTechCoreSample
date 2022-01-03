@@ -1,0 +1,30 @@
+﻿
+@using WTechCoreSample.Models;
+
+@model List<GroupMember>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>Musical Instrument</td>
+        <td>Group Name</td>
+        <td>Detail</td>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.MusicalEnstrument</td>
+            <td>@item.MusicGroup.Name</td>
+            <td><a href="/Member/MemberDetail/@item.Id">Go to detail</a></td>
+        </tr>
+
+    }
+</table>

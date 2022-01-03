@@ -1,0 +1,24 @@
+﻿@model WTechCoreSample.Models.ORM.BlogPost
+
+
+<h1>Güncelleme Ekranı</h1>
+
+<form action="/Admin/UpdateAdminUser" method="post">
+
+    <div>
+        <label>Title</label>
+        @Html.TextBoxFor(q => q.Title)
+    </div>
+
+    <div>
+        <label>Content</label>
+        @Html.TextAreaFor(q => q.Content)
+    </div>
+
+    @Html.HiddenFor(q => q.Id)
+
+    <div>
+       <input type="submit" value="Update"/>
+    </div>
+
+</form>

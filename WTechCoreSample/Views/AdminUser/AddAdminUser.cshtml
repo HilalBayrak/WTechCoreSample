@@ -1,0 +1,52 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<WTechCoreSample.Models.ORM.AdminUser>
+
+
+<div>
+    <h1>Kullanıcı Ekleme Ekranı</h1>
+
+    <form action="/AdminUser/AdminUser" method="post">
+
+        <div class="form-group">
+            <label>Admin User:</label>
+            <select name="Id">
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+
+            </select>
+            @*<input type="text" name="BlogCategoryId" class="form-control"  />*@
+        </div>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" name="Name"  class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Content:</label>
+            <input type="text" name="SurName" class="form-control" />
+        </div>
+
+           <div class="form-group">
+            <label>Content:</label>
+            <input type="text" name="EMail" class="form-control" />
+        </div>
+
+           <div class="form-group">
+            <label>Content:</label>
+            <input type="text" name="Password" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add" />
+        </div>
+
+    </form>
+</div>

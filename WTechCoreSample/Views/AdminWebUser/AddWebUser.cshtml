@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@model WTechCoreSample.Models.VM.WebUserVM
+
+
+<form action="/AdminWebUser/AddWebUser" method="post">
+
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        <label>Ad</label>
+        @Html.TextBoxFor(q => q.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Soyad</label>
+        @Html.TextBoxFor(q => q.SurName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Şehir</label>
+        @Html.TextBoxFor(q => q.City, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Ülke</label>
+        @Html.TextBoxFor(q => q.Country, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>E-Mail</label>
+        @Html.TextBoxFor(q => q.EMail, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Adres</label>
+        @Html.TextBoxFor(q => q.Address, new { @class = "form-control" })
+    </div>
+
+    <input type="submit" value="Ekle" />
+
+</form>

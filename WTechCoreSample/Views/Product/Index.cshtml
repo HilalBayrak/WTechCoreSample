@@ -1,0 +1,42 @@
+﻿@model List<WTechCoreSample.Models.Product>
+
+<table>
+
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Stock</td>
+        <td>Category</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.StockStatus == false)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.category?.CategoryName</td>
+
+            </tr>
+        }
+        else
+        {
+            <tr style="background-color:tomato">
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.category?.CategoryName</td>
+
+            </tr>
+        }
+
+
+
+    }
+
+</table>

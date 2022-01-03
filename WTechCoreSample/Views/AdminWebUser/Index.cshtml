@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@model List<WTechCoreSample.Models.VM.WebUserVM>
+
+
+
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Surname</td>
+        <td>City</td>
+        <td>Country</td>
+        <td>EMail</td>
+        <td>Address</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.SurName</td>
+            <td>@item.City</td>
+            <td>@item.Country</td>
+            <td>@item.EMail</td>
+            <td>@item.Address</td>
+        </tr>
+    }
+
+</table>

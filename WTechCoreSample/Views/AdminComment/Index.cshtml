@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model List<WTechCoreSample.Models.ORM.Comment>
+
+
+
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>EMail</td>
+        <td>Is Active</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td>@item.WebUser?.EMail</td>
+            <td><a href="/AdminComment/CommentIsActiveChange/@item.Id">@item.IsActive</a></td>
+        </tr>
+    }
+
+</table>
